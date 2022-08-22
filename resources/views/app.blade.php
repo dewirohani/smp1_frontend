@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>SMPN 1 SUMENEP</title>
     <!-- plugins:css -->
+    <link rel="stylesheet" href="{{asset('assets/vendors/jquery-bar-rating/css-stars.css')}}" />
+    <link href="{{ asset('vendor/fontawesome-free/css/fontawesome.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- End plugin css for this page -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{asset('assets/vendors/jquery-bar-rating/css-stars.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/font-awesome/css/font-awesome.min.css')}}" />
-    <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
@@ -92,6 +92,11 @@
     <script src="{{asset('assets/vendors/flot/jquery.flot.categories.js')}}"></script>
     <script src="{{asset('assets/vendors/flot/jquery.flot.fillbetween.js')}}"></script>
     <script src="{{asset('assets/vendors/flot/jquery.flot.stack.js')}}"></script>
+
+    <script src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('vendor/select2/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('vendor/clock-picker/clockpicker.js') }}"></script>
+    
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="{{asset('assets/js/off-canvas.js')}}"></script>
@@ -102,6 +107,44 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{asset('assets/js/dashboard.js')}}"></script>
+    <script type="text/javascript">
+      function getCookie(name) {
+          let cookie = {};
+          document.cookie.split(';').forEach(function(el) {
+              let [k, v] = el.split('=');
+              cookie[k.trim()] = v;
+          })
+          return cookie[name];
+      }
+
+      $("#logout").on('submit', function(event) {
+          event.preventDefault();
+          $(".preloader").fadeIn();
+
+          $.ajax({
+              url: "http://127.0.0.1:8000/api/logout",
+              type: "POST",
+              headers: {
+                  'Authorization': 'Bearer ' + getCookie('token'),
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+              },
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function(response) {
+                  $(".preloader").fadeOut();
+                  if (response.success) {
+                      window.location.href = "/";
+                      document.cookie.split(";").forEach(function(c) {
+                          document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" +
+                              new Date().toUTCString() + ";path=/");
+                      });
+                  }
+              },
+          });
+      });
+  </script>
     <!-- End custom js for this page -->
   </body>
 </html>
