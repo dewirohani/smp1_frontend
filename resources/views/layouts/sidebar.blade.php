@@ -7,19 +7,19 @@
       <span class="menu-title">Dashboard</span>
     </a>
   </li>
-  {{-- <li class="nav-item">
-    <a class="nav-link" href="pages/icons/mdi.html">
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('students.index') }}">
       <i class="mdi mdi-contacts menu-icon"></i>
-      <span class="menu-title">Data Induk Siswa</span>
+      <span class="menu-title">Data Siswa</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/forms/basic_elements.html">
+    <a class="nav-link" href="{{ route('student-classes.index') }}">
       <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-      <span class="menu-title">Data Induk Pegawai</span>
+      <span class="menu-title">Data Kelas</span>
     </a>
   </li>
-  <li class="nav-item">
+  {{-- <li class="nav-item">
     <a class="nav-link" href="pages/charts/chartjs.html">
       <i class="mdi mdi-chart-bar menu-icon"></i>
       <span class="menu-title">Leger</span>

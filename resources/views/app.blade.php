@@ -8,6 +8,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/jquery-bar-rating/css-stars.css')}}" />
     <link href="{{ asset('vendor/fontawesome-free/css/fontawesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <!-- End plugin css for this page -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
@@ -22,6 +23,15 @@
     <link rel="shortcut icon" href="{{asset('assets/images/logo.png')}}" />
   </head>
   <body>
+    @php
+        $auth = Http::withHeaders([
+            'Authorization' => 'Bearer '.request()->cookie('token'),
+            'ContentType' => 'application/json',
+            'Accept' => 'application/json',
+        ])->get('http://127.0.0.1:8000/api/user')->json();
+        
+        $auth = json_decode(json_encode($auth))->data;
+    @endphp
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -85,6 +95,7 @@
     <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
+    <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('assets/vendors/jquery-bar-rating/jquery.barrating.min.js')}}"></script>
     <script src="{{asset('assets/vendors/chart.js/Chart.min.js')}}"></script>
     <script src="{{asset('assets/vendors/flot/jquery.flot.js')}}"></script>
@@ -96,6 +107,8 @@
     <script src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('vendor/select2/dist/js/select2.min.js') }}"></script>
     <script src="{{ asset('vendor/clock-picker/clockpicker.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
     
     <!-- End plugin js for this page -->
     <!-- inject:js -->

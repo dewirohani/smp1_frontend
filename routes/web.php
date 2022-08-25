@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Http\Controllers\{
-    HomeController
+    HomeController, StudentClassController, StudentController
 };
 
 /*
@@ -33,6 +33,8 @@ Route::get('/', function () {
 Route::middleware(['authenticated'])->group(function (){
 
     Route::get('/home',                          [HomeController::class, 'index'])->name('home');   
+    Route::get('/student-classes',               [StudentClassController::class, 'index'])->name('student-classes.index');   
+    Route::get('/students',                      [StudentController::class, 'index'])->name('students.index');   
 
 // Route::get('/', function () {
 //     return view('app');
