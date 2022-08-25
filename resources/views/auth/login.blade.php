@@ -27,7 +27,7 @@
                                                 placeholder="Password">
                                             <small class="text-danger" id="password-error"></small>
                                         </div>
-                                        <divd class="form-group">
+                                        <div class="form-group">
                                             <button type="submit" id="submit"
                                                 class="btn btn-primary btn-block">Login</button>
                                         </div>
