@@ -33,8 +33,14 @@ Route::get('/', function () {
 Route::middleware(['authenticated'])->group(function (){
 
     Route::get('/home',                          [HomeController::class, 'index'])->name('home');   
+    
     Route::get('/student-classes',               [StudentClassController::class, 'index'])->name('student-classes.index');   
+    Route::get('/student-classes/create',        [StudentClassController::class, 'create'])->name('student-classes.create');   
+    Route::get('/student-classes/edit',          [StudentClassController::class, 'edit'])->name('student-classes.edit');   
+
     Route::get('/students',                      [StudentController::class, 'index'])->name('students.index');   
+    Route::get('/students/create',               [StudentController::class, 'create'])->name('students.create');   
+    Route::get('/students/edit',                 [StudentController::class, 'edit'])->name('students.edit');   
 
 // Route::get('/', function () {
 //     return view('app');

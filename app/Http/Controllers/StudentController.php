@@ -45,6 +45,20 @@ class StudentController extends Controller
                             ->make(true);
             }
             return view('admin.student.index', compact('students'));
-        
+    }
+
+    public function craete(){
+        return view('admin.student.create');
+    }
+
+    public function edit($id){
+        $data = Http::withHeaders([
+            'Authorization' => 'Bearer '.request()->cookie('token'),
+            'ContentType' => 'application/json',
+            'Accept' => 'application/json',
+            ])->get('http://127.0.0.1:8000/api/students/edit/'.$id)->json();
+            $student = json_decode(json_encode($data))->student;
+
+            return view('admin.student.edit', compact('student'));
     }
 }

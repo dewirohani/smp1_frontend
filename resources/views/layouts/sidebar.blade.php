@@ -1,4 +1,4 @@
-<li class="pt-2 pb-1">
+  <li class="pt-2 pb-1">
     <span class="nav-item-head">Menu</span>
   </li>
   <li class="nav-item">
@@ -71,11 +71,3 @@
       </ul>
     </div>
   </li>
- 
-{{--  
-  <li class="nav-item pt-3">
-    <a class="nav-link" href="http://bootstrapdash.com/demo/plus-free/documentation/documentation.html" target="_blank">
-      <i class="mdi mdi-file-document-box menu-icon"></i>
-      <span class="menu-title">Documentation</span>
-    </a>
-  </li> --}}

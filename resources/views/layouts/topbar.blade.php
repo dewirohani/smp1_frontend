@@ -9,8 +9,6 @@
       <ul class="navbar-nav navbar-nav-right">
       <form id="logout">
           @csrf
-          <button type="button" class="btn btn-outline-primary"
-              data-dismiss="modal">Cancel</button>
           <button id="submit" class="btn btn-primary">
             <li class="nav-item nav-logout d-none d-lg-block">
             <i class="mdi mdi-logout"></i>

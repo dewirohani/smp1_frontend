@@ -7,7 +7,7 @@
     <title>SMPN 1 SUMENEP</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/jquery-bar-rating/css-stars.css')}}" />
-    <link href="{{ asset('vendor/fontawesome-free/css/fontawesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{asset('vendor/fontawesome-free/css/fontawesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <!-- End plugin css for this page -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
@@ -20,6 +20,8 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{asset('assets/css/demo_1/style.css')}}" />
     <!-- End layout styles -->
+    <link rel="stylesheet" href="{{asset('assets/css/demo_1/style.css')}}" />
+    
     <link rel="shortcut icon" href="{{asset('assets/images/logo.png')}}" />
   </head>
   <body>
@@ -44,7 +46,6 @@
               </div>
               <div class="nav-profile-text d-flex ml-0 mb-3 flex-column">
                 <span class="font-weight-semibold mb-1 mt-2 text-center">Admin</span>
-                
               </div>
             </a>
           </li>
@@ -52,7 +53,6 @@
             <a class="nav-link d-block" href="index.html">
               <img class="sidebar-brand-logo" src="{{asset('assets/images/logosmp1.png')}}" alt="" />              
             </a>
-    
           </li>
           @include('layouts.sidebar')
         </ul>
@@ -65,9 +65,8 @@
         <div class="main-panel">
           <div class="content-wrapper pb-0">
             @yield('content')
-            
-            </div>
           </div>
+        </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
@@ -81,21 +80,16 @@
                 </script>, SMPN 1 SUMENEP
             </span>
             </div>
-
-            
           </footer>
           <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
       </div>
-      <!-- page-body-wrapper ends -->
+        <!-- main-panel ends -->
     </div>
-    <!-- container-scroller -->
+      <!-- page-body-wrapper ends -->
     <!-- plugins:js -->
     <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('assets/vendors/jquery-bar-rating/jquery.barrating.min.js')}}"></script>
     <script src="{{asset('assets/vendors/chart.js/Chart.min.js')}}"></script>
     <script src="{{asset('assets/vendors/flot/jquery.flot.js')}}"></script>
@@ -103,7 +97,8 @@
     <script src="{{asset('assets/vendors/flot/jquery.flot.categories.js')}}"></script>
     <script src="{{asset('assets/vendors/flot/jquery.flot.fillbetween.js')}}"></script>
     <script src="{{asset('assets/vendors/flot/jquery.flot.stack.js')}}"></script>
-
+    
+    <script src="{{ asset('vendor/fontawesome-free/js/all.js')}}"></script>
     <script src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('vendor/select2/dist/js/select2.min.js') }}"></script>
     <script src="{{ asset('vendor/clock-picker/clockpicker.js') }}"></script>
@@ -158,6 +153,5 @@
           });
       });
   </script>
-    <!-- End custom js for this page -->
   </body>
 </html>

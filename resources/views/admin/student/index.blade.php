@@ -1,46 +1,44 @@
 @extends('app')
 @section('content')
     <div class="content">
-        <div class="row">
             <!-- Datatables -->
-            <div class="col-lg-12">
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-dark">Data Siswa</h6>
-                  {{-- <a href="{{ route('majors.create') }}">
-                    <button class="btn btn-success mr-2" style="float: right"><i class="fa fa-plus"></i></button>
-                  </a> --}}
-                </div>
-                <div class="table-responsive p-3">
-                  <table class="table align-items-center table-flush" id="dataTable">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>#</th>
-                        <th>NISN</th>
-                        <th>Nama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Diterima Di Kelas</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>#</th>
-                        <th>NISN</th>
-                        <th>Nama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Diterima Di Kelas</th>
-                        <th>Action</th>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+      <div class="col-lg-12">
+        <div class="card mb-4 ">
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-dark">Data Siswa</h6>
+            <a href="{{ route('students.create') }}">
+              <button class="btn btn-success mr-2" style="float: right"><i class="fa fa-plus"></i></button>
+            </a>
           </div>
+          <div class="table-responsive p-3 align-items-center">
+            <table class="table align-items-center table-flush" id="dataTable" >
+              <thead class="thead-light">
+                <tr>
+                  <th>#</th>
+                  <th>NISN</th>
+                  <th>Nama</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Diterima Di Kelas</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>#</th>
+                  <th>NISN</th>
+                  <th>Nama</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Diterima Di Kelas</th>
+                  <th>Action</th>
+                </tr>
+              </tfoot>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>    
     <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
     <script>
