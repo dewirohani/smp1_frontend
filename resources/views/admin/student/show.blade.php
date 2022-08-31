@@ -8,8 +8,8 @@
             </div>
             <div class="panel-body">
              
+                <label class="pl-3">Location</label>
                 <div class="col-sm-10">
-                    <label class="pl-3">Location</label>
                     <p> Haloo </p>
                   </div>
               
