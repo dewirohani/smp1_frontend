@@ -47,7 +47,7 @@ class StudentController extends Controller
             return view('admin.student.index', compact('students'));
     }
 
-    public function craete(){
+    public function create(){
         return view('admin.student.create');
     }
 
@@ -60,5 +60,9 @@ class StudentController extends Controller
             $student = json_decode(json_encode($data))->student;
 
             return view('admin.student.edit', compact('student'));
+    }
+
+    public function show(){
+        return view('admin.student.show');
     }
 }
